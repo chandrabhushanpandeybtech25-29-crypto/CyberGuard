@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberGuard | Cyber Safety Assistant</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>🛡️ CyberGuard</h1>
+        <p>Your Personal Cyber Safety Assistant</p>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Stay Safe in the Digital World</h2>
+            <p>Check password strength and learn how to protect your information online.</p>
+        </section>
+
+        <section class="card password-card">
+            <h2>Password Strength Checker</h2>
+            <p>Enter a sample password to evaluate its strength.</p>
+
+            <label for="password">Your password</label>
+
+            <div class="password-input">
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter a sample password"
+                    autocomplete="off"
+                >
+
+                <button type="button" id="togglePassword">Show</button>
+            </div>
+
+            <button type="button" id="checkPassword">Check Strength</button>
+
+            <div class="strength-track">
+                <div id="strengthBar"></div>
+            </div>
+
+            <h3 id="strengthResult" aria-live="polite">Strength: Not checked</h3>
+            <p id="strengthFeedback">Your result will appear here.</p>
+
+            <p class="privacy-note">
+                This checker evaluates password characteristics locally in your browser.
+                Do not enter a real or reused password.
+            </p>
+        </section>
+
+        <section class="tools">
+          <div class="card url-card">
+    <h2>URL Safety Checker</h2>
+
+    <p>Check a website address for common suspicious patterns.</p>
+
+    <label for="urlInput">Website URL</label>
+
+    <input
+        type="text"
+        id="urlInput"
+        placeholder="https://example.com"
+        autocomplete="off"
+    >
+
+    <button type="button" id="checkURL">Check URL</button>
+
+    <h3 id="urlResult" aria-live="polite">Result: Not checked</h3>
+
+    <p id="urlFeedback">Your result will appear here.</p>
+</div>
+
+           <div class="card phishing-card">
+    <h2>Phishing Message Detector</h2>
+
+    <p>Check a suspicious email, SMS, or WhatsApp message.</p>
+
+    <label for="messageInput">Paste your message</label>
+
+    <textarea
+        id="messageInput"
+        rows="6"
+        placeholder="Paste a suspicious message here..."
+    ></textarea>
+
+    <button type="button" id="checkMessage">Analyze Message</button>
+
+    <h3 id="phishingResult" aria-live="polite">Result: Not checked</h3>
+
+    <p id="phishingFeedback">Your analysis will appear here.</p>
+</div>
+<div class="card privacy-card">
+    <h2>🔒 Privacy Checker</h2>
+
+    <p>Check text for possible sensitive information before sharing it.</p>
+
+    <label for="privacyInput">Enter text to check</label>
+
+    <textarea
+        id="privacyInput"
+        rows="5"
+        placeholder="Paste sample text here..."
+    ></textarea>
+
+    <button type="button" id="checkPrivacy">Check Privacy</button>
+
+    <h3 id="privacyResult" aria-live="polite">Result: Not checked</h3>
+
+    <ul id="privacyFindings"></ul>
+
+    <p class="privacy-note">
+        Your text is checked locally in your browser. Use fictional sample data
+        for testing and avoid entering real personal information.
+    </p>
+</div>
+            
+        </section>
+
+    </main>
+
+       <!-- Your existing Privacy Checker section -->
+    <!-- Keep your existing Privacy Checker code here -->
+
+    <!-- QR Code Scanner -->
+    <section class="tool-card qr-card">
+        <h2>📷 QR Code Scanner</h2>
+        <p>Upload a QR code image to inspect its contents.</p>
+
+        <input type="file" id="qrImage" accept="image/*">
+
+        <button type="button" id="scanQR">Scan QR Code</button>
+
+        <div id="qrResult" class="result-box" aria-live="polite">
+            Your scan result will appear here.
+        </div>
+
+        <p class="privacy-note">
+            ⚠️ Never open suspicious links or enter passwords on websites you do not trust.
+        </p>
+    </section>
+
+    <!-- Footer should come after all website sections -->
+    <footer>
+        <p>CyberGuard – Learn, Detect, Protect.</p>
+        <small>Educational checks cannot guarantee complete security.</small>
+    </footer>
+
+    <!-- Load libraries and JavaScript last -->
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+<!-- CyberGuard Knowledge Hub -->
+<section class="knowledge-hub" id="knowledge-hub">
+
+    <div class="hub-heading">
+        <span class="hub-badge">LEARN • PROTECT • STAY SAFE</span>
+        <h2>🛡️ Cyber Safety Knowledge Hub</h2>
+        <p>
+            Learn essential cybersecurity practices and explore
+            trusted resources to protect yourself online.
+        </p>
+    </div>
+
+    <!-- Important Cyber Safety Tips -->
+    <h3 class="hub-subheading">🔐 Essential Safety Tips</h3>
+
+    <div class="hub-grid">
+
+        <article class="hub-card">
+            <div class="hub-icon">🔑</div>
+            <h4>Strong Passwords</h4>
+            <p>
+                Use long, unique passwords for every account.
+                Consider a password manager and enable
+                multi-factor authentication (MFA).
+            </p>
+        </article>
+
+        <article class="hub-card">
+            <div class="hub-icon">🎣</div>
+            <h4>Identify Phishing</h4>
+            <p>
+                Be cautious of urgent messages, unexpected
+                attachments, fake login pages, and requests
+                for passwords or OTPs.
+            </p>
+        </article>
+
+        <article class="hub-card">
+            <div class="hub-icon">🔗</div>
+            <h4>Check Suspicious Links</h4>
+            <p>
+                Examine the actual domain before clicking.
+                Watch for misspellings, misleading subdomains,
+                and unexpected redirects.
+            </p>
+        </article>
+
+        <article class="hub-card">
+            <div class="hub-icon">📱</div>
+            <h4>QR Code Safety</h4>
+            <p>
+                Preview the destination before opening it.
+                Never enter banking details or passwords
+                on an untrusted website opened through a QR code.
+            </p>
+        </article>
+
+        <article class="hub-card">
+            <div class="hub-icon">🔒</div>
+            <h4>Protect Your Privacy</h4>
+            <p>
+                Never share OTPs, passwords, PINs, or recovery
+                codes. Share personal and financial information
+                only when necessary and with trusted services.
+            </p>
+        </article>
+
+        <article class="hub-card">
+            <div class="hub-icon">🔄</div>
+            <h4>Keep Devices Updated</h4>
+            <p>
+                Install security updates, use genuine software,
+                review app permissions, and remove applications
+                you no longer need.
+            </p>
+        </article>
+
+    </div>
+
+    <!-- What Should I Do? -->
+    <div class="hub-emergency">
+        <h3>🚨 What Should I Do If Something Goes Wrong?</h3>
+
+        <div class="hub-action">
+            <strong>Clicked a suspicious link?</strong>
+            <p>
+                Stop interacting with the website. Do not download
+                files or enter credentials. If you entered a password,
+                change it from a trusted device and secure the account.
+            </p>
+        </div>
+
+        <div class="hub-action">
+            <strong>Shared an OTP or banking details?</strong>
+            <p>
+                Contact your bank or service provider immediately
+                through its official channel. Secure the affected
+                account and report any unauthorised transactions.
+            </p>
+        </div>
+
+        <div class="hub-action">
+            <strong>Lost money in an online fraud in India?</strong>
+            <p>
+                Contact your bank immediately and call
+                <strong>1930</strong> to report financial cyber fraud.
+                You can also submit a complaint through the
+                National Cyber Crime Reporting Portal.
+            </p>
+            <a
+                href="https://cybercrime.gov.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hub-button">
+                Report Cybercrime ↗
+            </a>
+        </div>
+    </div>
+
+    <!-- Trusted Cybersecurity Websites -->
+    <h3 class="hub-subheading">🌐 Trusted Cybersecurity Websites</h3>
+
+    <div class="hub-grid resource-grid">
+
+        <article class="hub-card resource-card">
+            <h4>🇮🇳 National Cyber Crime Portal</h4>
+            <p>
+                Official Indian government portal for reporting
+                cybercrime and accessing reporting facilities.
+            </p>
+            <a href="https://cybercrime.gov.in/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Visit Official Website ↗
+            </a>
+        </article>
+
+        <article class="hub-card resource-card">
+            <h4>🛡️ CERT-In</h4>
+            <p>
+                India's national computer emergency response
+                team. Explore cybersecurity advisories,
+                vulnerability information, and awareness resources.
+            </p>
+            <a href="https://www.cert-in.org.in/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Visit Official Website ↗
+            </a>
+        </article>
+
+        <article class="hub-card resource-card">
+            <h4>🧹 Cyber Swachhta Kendra</h4>
+            <p>
+                Government of India initiative providing information
+                and resources for improving device security and
+                addressing botnet-related threats.
+            </p>
+            <a href="https://www.csk.gov.in/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Visit Official Website ↗
+            </a>
+        </article>
+
+        <article class="hub-card resource-card">
+            <h4>📚 Information Security Awareness</h4>
+            <p>
+                Explore cybersecurity awareness and educational
+                resources for safer use of digital services.
+            </p>
+            <a href="https://infosecawareness.in/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Learn More ↗
+            </a>
+        </article>
+
+        <article class="hub-card resource-card">
+            <h4>💻 OWASP</h4>
+            <p>
+                Learn about web application security, common
+                vulnerabilities, and practical security guidance
+                useful for CSE students and developers.
+            </p>
+            <a href="https://owasp.org/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Explore OWASP ↗
+            </a>
+        </article>
+
+        <article class="hub-card resource-card">
+            <h4>🌎 CISA — Secure Our World</h4>
+            <p>
+                Explore practical security guidance about
+                passwords, phishing, software updates,
+                and multifactor authentication.
+            </p>
+            <a href="https://www.cisa.gov/secure-our-world"
+               target="_blank"
+               rel="noopener noreferrer">
+                Explore Safety Tips ↗
+            </a>
+        </article>
+
+    </div>
+
+    <div class="hub-disclaimer">
+        <strong>Important:</strong>
+        CyberGuard provides educational guidance. Its checks
+        cannot guarantee that a website, message, or QR code is safe.
+        For suspected cybercrime, use official reporting channels.
+    </div>
+    <a href="#knowledge-hub">Knowledge Hub</a>
+
+</section>
